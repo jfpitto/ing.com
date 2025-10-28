@@ -1,35 +1,46 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Johann Fernando Pitto | Ingeniero de Sistemas</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
-    body { font-family: 'Segoe UI', sans-serif; }
-    .navbar { background-color: #0d6efd; }
-    .navbar a { color: white !important; font-weight: 500; }
-    .hero { background: linear-gradient(rgba(13,110,253,0.7), rgba(13,110,253,0.7)), url('https://images.unsplash.com/photo-1519389950473-47ba0277781c') center/cover; color: white; text-align: center; padding: 100px 20px; }
-    .section-title { color: #0d6efd; margin-bottom: 30px; font-weight: bold; }
-    .card { border: none; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border-radius: 15px; }
-    footer { background-color: #0d6efd; color: white; text-align: center; padding: 20px 0; margin-top: 50px; }
+    :root{
+      --primary:#0d6efd;
+      --muted:#6c757d;
+    }
+    body { font-family: 'Segoe UI', Roboto, system-ui, -apple-system, 'Helvetica Neue', Arial; background:#f8f9fa; }
+    .navbar { background: linear-gradient(90deg,var(--primary), #0b5ed7); }
+    .navbar-brand, .nav-link { color: #fff !important; }
+    .hero {
+      background: linear-gradient(180deg, rgba(13,110,253,0.85), rgba(13,110,253,0.75)), url('https://images.unsplash.com/photo-1526378720888-9c3f05f8c0b5?auto=format&fit=crop&w=1600&q=60') center/cover no-repeat;
+      color: #fff; padding: 110px 20px; border-bottom-left-radius: 24px; border-bottom-right-radius: 24px;
+    }
+    .card { border: none; border-radius: 12px; box-shadow: 0 6px 18px rgba(20,20,50,0.06); }
+    .section-title { color: var(--primary); font-weight:700; margin-bottom:1rem; }
+    .skill-badge { border-radius: 999px; padding: .45rem .8rem; background: #fff; box-shadow: 0 2px 6px rgba(0,0,0,0.04); margin: .25rem; display:inline-block; }
+    footer { background: linear-gradient(90deg,var(--primary), #0b5ed7); color:#fff; padding:20px 0; margin-top:40px; }
+    .muted { color: var(--muted); }
+    @media (max-width:575px){ .hero { padding: 70px 15px; } }
   </style>
 </head>
 <body>
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark">
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
   <div class="container">
-    <a class="navbar-brand fw-bold" href="#inicio">J.F. Pitto</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+    <a class="navbar-brand fw-bold" href="#inicio">Johann F. Pitto</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="menu">
-      <ul class="navbar-nav ms-auto">
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
         <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
         <li class="nav-item"><a class="nav-link" href="#sobre">Sobre mí</a></li>
         <li class="nav-item"><a class="nav-link" href="#experiencia">Experiencia</a></li>
-        <li class="nav-item"><a class="nav-link" href="#educacion">Educación</a></li>
+        <li class="nav-item"><a class="nav-link" href="#proyectos">Proyectos</a></li>
         <li class="nav-item"><a class="nav-link" href="#habilidades">Habilidades</a></li>
         <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
       </ul>
@@ -37,90 +48,201 @@
   </div>
 </nav>
 
-<!-- Hero -->
-<section id="inicio" class="hero">
+<!-- HERO -->
+<section id="inicio" class="hero text-center">
   <div class="container">
     <h1 class="display-5 fw-bold">Johann Fernando Pitto Giraldo</h1>
-    <p class="lead mb-4">Ingeniero de Sistemas | Desarrollador Full Stack | Analista AMS</p>
-    <a href="#contacto" class="btn btn-light btn-lg">Contáctame</a>
+    <p class="lead mb-4">Ingeniero de Sistemas — Analista AMS & Desarrollador | Automación, Migraciones, Python, Java, PHP</p>
+    <a class="btn btn-light btn-lg me-2" href="#contacto">Contáctame</a>
+    <a class="btn btn-outline-light btn-lg" href="#proyectos">Ver proyectos</a>
   </div>
 </section>
 
-<!-- Sobre mí -->
+<!-- SOBRE MI -->
 <section id="sobre" class="py-5">
-  <div class="container text-center">
-    <h2 class="section-title">Sobre Mí</h2>
-    <p class="lead">Soy Ingeniero de Sistemas egresado de la Universidad Santiago de Cali, con experiencia en análisis, diseño y desarrollo de sistemas de información. 
-      Me apasiona crear soluciones tecnológicas innovadoras que optimicen procesos y mejoren la eficiencia organizacional. 
-      Trabajo con metodologías ágiles (SCRUM) y disfruto aprender continuamente sobre nuevas tecnologías.</p>
+  <div class="container">
+    <div class="row align-items-center g-4">
+      <div class="col-lg-8">
+        <h2 class="section-title">Sobre mí</h2>
+        <p class="lead">Soy Ingeniero de Sistemas (Universidad Santiago de Cali). Me especializo en análisis, diseño e implementación de soluciones de software, migraciones y automatización. Tengo experiencia con metodologías ágiles (SCRUM), gestión de soporte AMS y desarrollo con Python, Java, PHP y herramientas para integración con Excel/entornos empresariales.</p>
+        <p class="muted mb-0"><strong>Ubicación:</strong> Cali, Colombia · <strong>Áreas:</strong> AMS, Soporte de Aplicaciones, Desarrollo Backend, Automatización industrial.</p>
+      </div>
+      <div class="col-lg-4 text-center">
+        <!-- Placeholder para foto -->
+        <div class="card p-3">
+          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=60" alt="Foto profesional" class="img-fluid rounded" style="max-height:220px; object-fit:cover;">
+          <div class="mt-3">
+            <small class="text-muted">Foto profesional (reemplázala con tu imagen)</small>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- Experiencia -->
-<section id="experiencia" class="py-5 bg-light">
+<!-- EXPERIENCIA -->
+<section id="experiencia" class="py-5 bg-white">
   <div class="container">
     <h2 class="section-title text-center">Experiencia Laboral</h2>
+
+    <!-- GFT -->
+    <div class="card p-4 mb-4">
+      <div class="row g-3">
+        <div class="col-md-9">
+          <h5 class="mb-1">GFT Technologies / Sophos GFT — AMS Analyst I / Solution Consultant I</h5>
+          <p class="text-muted mb-1">Desde 1 de mayo de 2025 — Equipo AMS, región LATAM (Cali)</p>
+          <p>Responsable de la operación y soporte de aplicaciones empresariales, manejo de casos (incidentes y requerimientos), implementación de mejoras y automatizaciones para optimizar tiempos de gestión. Trabajo conjunto con equipos N3, proveedores y stakeholders para garantizar SLA y continuidad del negocio.</p>
+          <ul>
+            <li>Administración y manejo de backlog AMS: recepción, priorización y cierre de casos.</li>
+            <li>Desarrollo de scripts y herramientas en Python para automatizar procesos internos y reportes.</li>
+            <li>Integración con archivos Excel macro (.xlsm) usando xlwings y soluciones de interfaz (tkinter) para gestión interna de casos.</li>
+            <li>Creación de APIs y microservicios en Python para exponer y editar información desde GUI hacia archivos Excel (.xlsm).</li>
+            <li>Soporte técnico y migraciones parciales de aplicaciones; coordinación con proveedores y pruebas de entrega.</li>
+          </ul>
+        </div>
+        <div class="col-md-3 text-md-end">
+          <span class="badge bg-primary py-2 px-3">AMS · Soporte · Automatización</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- AQUAOCCIDENTE -->
+    <div class="card p-4 mb-4">
+      <div class="row g-3">
+        <div class="col-md-9">
+          <h5 class="mb-1">AQUAOCCIDENTE S.A E.S.P</h5>
+          <p class="text-muted mb-1">Feb 2018 - Ago 2023</p>
+          <p>Desarrollo de migraciones de aplicaciones web en Java y PHP. Soporte de aplicaciones y desarrollo diario en lenguajes Java y PHP con bases de datos SQL/PL Oracle.</p>
+        </div>
+        <div class="col-md-3 text-md-end">
+          <span class="badge bg-secondary py-2 px-3">Migraciones · Java · PHP</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- PLASTIC FILMS -->
+    <div class="card p-4">
+      <div class="row g-3">
+        <div class="col-md-9">
+          <h5 class="mb-1">PLASTIC FILMS S.A</h5>
+          <p class="text-muted mb-1">Feb 2016 - Dic 2017</p>
+          <p>Encargado en el área de informática para desarrollo de software y supervisión de programación de producción. Implementé proyectos de automatización industrial (impresoras industriales) usando Python, Java y PHP.</p>
+        </div>
+        <div class="col-md-3 text-md-end">
+          <span class="badge bg-info text-dark py-2 px-3">Automatización · Python</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROYECTOS -->
+<section id="proyectos" class="py-5">
+  <div class="container">
+    <h2 class="section-title text-center">Proyectos destacados (Python & otros)</h2>
+
     <div class="row g-4">
-      <div class="col-md-6">
+      <div class="col-lg-6">
         <div class="card p-4">
-          <h5>AQUAOCCIDENTE S.A E.S.P</h5>
-          <p class="text-muted">Feb 2018 - Ago 2023</p>
-          <p>Desarrollo de migraciones de aplicaciones web en JAVA y PHP. 
-             Soporte de aplicaciones y desarrollo diario basado en SQL/PL ORACLE.</p>
+          <h6 class="fw-bold">Proyecto: Automatización impresoras industriales — PLASTIC FILMS S.A</h6>
+          <p class="muted mb-2">Tecnologías: Python, Java, PHP</p>
+          <p>Automatización de procesos para impresoras industriales, captura y procesado de datos de producción, integración con sistemas de control y reportes automáticos para supervisión.</p>
         </div>
       </div>
-      <div class="col-md-6">
+
+      <div class="col-lg-6">
         <div class="card p-4">
-          <h5>PLASTIC FILMS S.A</h5>
-          <p class="text-muted">Feb 2016 - Dic 2017</p>
-          <p>Encargado de desarrollo de software y supervisión de programación diaria de producción 
-            en JAVA, Python y PHP. Implementación de proyectos de automatización industrial.</p>
+          <h6 class="fw-bold">Proyecto: Migraciones de aplicaciones web — AQUAOCCIDENTE S.A E.S.P</h6>
+          <p class="muted mb-2">Tecnologías: PHP, Java, SQL/PL Oracle</p>
+          <p>Planificación y ejecución de migraciones, adaptación de código, pruebas de regresión y coordinación con áreas de negocio para despliegues en producción.</p>
         </div>
       </div>
+
+      <div class="col-lg-6">
+        <div class="card p-4">
+          <h6 class="fw-bold">Casos Backlog — Aplicación de escritorio</h6>
+          <p class="muted mb-2">Tecnologías: Python, tkinter, tkcalendar, xlwings</p>
+          <p>Interfaz gráfica para gestión de 'Backlog Soporte Aplicaciones' que permite buscar, editar y guardar registros en un archivo Excel macro (.xlsm) llamado <em>'Backlog Soporte Aplicaciones.xlsm'</em>. Maneja campos clave (ID SOLICITUD, DUEÑO, FECHAS, ESTADO, TIEMPOS, etc.) y conserva integración con la hoja de cálculo empresarial.</p>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="card p-4">
+          <h6 class="fw-bold">API + Web GUI para Excel .xlsm</h6>
+          <p class="muted mb-2">Tecnologías: Python (API), xlwings</p>
+          <p>Desarrollé endpoints e interfaz web que permiten ingresar, editar y guardar información en una hoja .xlsm local, identificando filas por <code>idsolicitud</code>. Funcionalidad de búsqueda, actualización y creación de registros desde la interfaz.</p>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="card p-4">
+          <h6 class="fw-bold">Time Calculator — Función 'add_time'</h6>
+          <p class="muted mb-2">Tecnologías: Python (algoritmos)</p>
+          <p>Función que suma duraciones a una hora inicial en formato 12 horas, considera días transcurridos y opcionalmente calcula día de la semana — útil para cálculos de SLA y horarios.</p>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="card p-4">
+          <h6 class="fw-bold">Separador de PDF por página y renombrado</h6>
+          <p class="muted mb-2">Tecnologías: Python (bibliotecas de PDF)</p>
+          <p>Procesamiento de PDFs para dividir por página; lectura del contenido de cada página para buscar la línea que contiene <strong>'Documento:'</strong> y usarla como nombre del archivo resultante. Si no se encuentra, se guarda como <code>pagina_X_sin_documento.pdf</code>.</p>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
-<!-- Educación -->
-<section id="educacion" class="py-5">
-  <div class="container">
-    <h2 class="section-title text-center">Educación</h2>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item"><strong>Ingeniero de Sistemas</strong> - Universidad Santiago de Cali (2020)</li>
-      <li class="list-group-item"><strong>Tecnólogo en Sistemas de Información</strong> - SENA (2015)</li>
-      <li class="list-group-item"><strong>Cursos:</strong> Java, Python, PHP, Controles de Seguridad Informática</li>
-    </ul>
-  </div>
-</section>
-
-<!-- Habilidades -->
-<section id="habilidades" class="py-5 bg-light">
+<!-- HABILIDADES -->
+<section id="habilidades" class="py-5 bg-white">
   <div class="container">
     <h2 class="section-title text-center">Conocimientos y Habilidades</h2>
-    <div class="row text-center">
-      <div class="col-md-4"><p>Lenguajes: Java, Python, PHP, JavaScript, JSON</p></div>
-      <div class="col-md-4"><p>Frameworks: Spring Boot, React JS, Express, Django, TailwindCSS</p></div>
-      <div class="col-md-4"><p>Bases de Datos: SQL / PL Oracle</p></div>
-      <div class="col-md-12"><p>Metodologías Ágiles: SCRUM | Control de versiones: Git</p></div>
+    <div class="row g-3 justify-content-center text-center">
+      <div class="col-md-10">
+        <div class="card p-4">
+          <p class="mb-2"><strong>Lenguajes:</strong> Java · Python · PHP · JavaScript · JSON</p>
+          <p class="mb-2"><strong>Frameworks / Tools:</strong> Spring Boot · React · Express · Django · TailwindCSS · Bootstrap · Git</p>
+          <p class="mb-2"><strong>Bases de datos:</strong> SQL / PL Oracle</p>
+          <p class="mb-0"><strong>Metodologías:</strong> SCRUM · Pruebas de software · Gestión AMS</p>
+          <div class="mt-3">
+            <span class="skill-badge">Automatización</span>
+            <span class="skill-badge">Integración Excel (.xlsm)</span>
+            <span class="skill-badge">Desarrollo Backend</span>
+            <span class="skill-badge">Soporte AMS</span>
+            <span class="skill-badge">Migraciones</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- Contacto -->
-<section id="contacto" class="py-5 text-center">
+<!-- CONTACTO -->
+<section id="contacto" class="py-5">
   <div class="container">
-    <h2 class="section-title">Contacto</h2>
-    <p><strong>Teléfono:</strong> (322) 621-8053</p>
-    <p><strong>Correo:</strong> <a href="mailto:Johannfernandopitto@gmail.com">Johannfernandopitto@gmail.com</a></p>
-    <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/johann-fernando-pitto-giraldo-737b76127/" target="_blank">Ver perfil profesional</a></p>
+    <h2 class="section-title text-center">Contacto</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card p-4 text-center">
+          <p class="mb-1"><strong>Teléfono:</strong> (322) 621-8053</p>
+          <p class="mb-1"><strong>Correo:</strong> <a href="mailto:Johannfernandopitto@gmail.com">Johannfernandopitto@gmail.com</a></p>
+          <p class="mb-0"><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/johann-fernando-pitto-giraldo-737b76127/" target="_blank" rel="noopener">Ver perfil</a></p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- Footer -->
+<!-- FOOTER -->
 <footer>
-  <p>© 2025 Johann Fernando Pitto Giraldo | Ingeniero de Sistemas</p>
+  <div class="container text-center">
+    <p class="mb-0">© 2025 Johann Fernando Pitto Giraldo — Ingeniero de Sistemas · Cali, Colombia</p>
+  </div>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
